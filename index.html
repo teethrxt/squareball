@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Zachs Square Ball</title>
+    <style>
+      #ball{
+      border-radius: 10px;
+        height: 120px;
+        width: 120px;
+        position: absolute;
+        background: blue;
+        box-shadow: 12px 10px #00008A; 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ball">
+      I AM COSPLAYING A BALL
+    </div>
+    <script>
+      let nameObj = "Ball" ///string global var
+      let speed =   4; //number global var
+      let moving = true; //boolean global var
+      
+      let x = 100;
+      let y = 100;
+       let dx = speed;
+      let dy = speed;  
+      
+    function moveBall(){
+      if(moving){
+        x += dx;
+      y += dy;
+        if( x > window.innerWidth- 50 || x < 0){
+          dx = -dx;
+        }
+        
+        if (y > window.innerHeight - 50 || y < 0){  
+        dy = -dy;}
+        
+        ball.style.left = x + "px";
+        ball.style.top = y + "px";
+      }
+      
+    }
+      function showInfo(){
+        console.log(nameObj, speed, moving);
+    }
+showInfo();
+setInterval(moveBall,20);    
+    </script>
+  </body>
+</html>
